@@ -1,0 +1,26 @@
+@model IEnumerable<MisProdRouting>
+@{
+    ViewBag.Title = "BST Jobs";
+}
+<!-- <h1>@ViewBag.Title</h1> -->
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                
+@if(Model.Any()){
+
+                <ul>
+                @foreach(var ProdRouting in Model){
+                    <li>@ProdRouting.Order_No @ProdRouting.Op_No
+                    </li>
+
+                    @if(@ProdRouting.Op_No == "40")
+                    {
+                        <p>...</p>
+                    }
+                }
+                </ul>
+            </div>
+        </div>
+    </div>
+}
